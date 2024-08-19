@@ -4,6 +4,9 @@ from time import sleep
 
 termSizeX, termSizeY = get_terminal_size().columns,get_terminal_size().index
 
+def write(textStr: str):
+    stdout.write(textStr)
+
 print(termSizeX, termSizeY)
 class Ball():
     def __init__(self, posX, posY) -> None:
@@ -17,13 +20,23 @@ class Ball():
 
 balls: list[Ball]
 
-def drawFrame():
-    sleep(0.1)
+def calculateBalls():
     for i in balls:
         i.posX += i.VelX
         i.posX += i.VelX
+        i.VelY -= 1 #Gravity
+
+def drawBalls():
+    write("\033[2J")
+    for i in balls:
+        write(f"\033[{i.posY};{i.posX}H")
+        write(f"\033[{i.Color}m")
+
+
 
 def main():
     newBall = Ball()
     while True:
-        drawFrame()
+        sleep(1)
+        calculateBalls()
+        drawBalls()
