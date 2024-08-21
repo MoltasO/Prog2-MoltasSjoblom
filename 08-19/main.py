@@ -2,7 +2,7 @@ from sys import stdout
 from os import get_terminal_size
 from time import sleep
 
-termSizeX, termSizeY = get_terminal_size().columns,get_terminal_size().index
+termSizeX, termSizeY = get_terminal_size().columns,get_terminal_size().lines
 
 def write(textStr: str):
     stdout.write(textStr)
@@ -16,7 +16,6 @@ class Ball():
         self.VelY = 0
         self.Acceleration = 1
         self.Color = 31
-        balls.append(self)
 
 balls: list[Ball]
 
@@ -35,8 +34,12 @@ def drawBalls():
 
 
 def main():
-    newBall = Ball()
+    newBall = Ball(10, 10)
+    balls.append(newBall)
     while True:
         sleep(1)
         calculateBalls()
         drawBalls()
+
+if __name__ == "__main__":
+    main()
