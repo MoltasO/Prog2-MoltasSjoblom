@@ -16,7 +16,7 @@ class Ball():
         self.VelX = velX
         self.VelY = velY
         self.Acceleration = 1
-        self.Color = 31
+        self.Color = randint(30, 37)
 
 balls: list[Ball] = []
 
@@ -44,17 +44,17 @@ def drawBalls():
     write("\033[2J")
     for i in balls:
         write(f"\033[{i.posY};{i.posX}H")
-        write(f"\033[{i.Color}mX\033[37m")
+        write(f"\033[{i.Color}mX")
 
 
 
 def main():
     write("\033[?25l")
-    for i in range(10):
-        newBall = Ball(randint(0,termSizeX), randint(0,termSizeY), randint(0,10), randint(0,10))
+    for i in range(20):
+        newBall = Ball(randint(0,termSizeX), randint(0,termSizeY), randint(0,5), randint(0,5))
         balls.append(newBall)
     while True:
-        sleep(0.1)
+        sleep(0.02)
         calculateBalls()
         drawBalls()
 

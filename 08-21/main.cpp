@@ -1,5 +1,5 @@
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    printf("Yes");
+    puts("erm what the sigma");
 }
