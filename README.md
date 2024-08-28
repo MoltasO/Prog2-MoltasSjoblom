@@ -1,3 +1,3 @@
 # Stuff I do in school
 
-Idk?
+> Super fun stuff
