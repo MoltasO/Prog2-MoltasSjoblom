@@ -1,0 +1,16 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "conio.h": "c",
+        "corecrt.h": "c",
+        "wincon.h": "c",
+        "winapifamily.h": "c",
+        "wincontypes.h": "c",
+        "consoleapi.h": "c",
+        "windows.h": "c",
+        "processenv.h": "c",
+        "minwindef.h": "c",
+        "handleapi.h": "c"
+    }
+}
